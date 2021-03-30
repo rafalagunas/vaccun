@@ -5,18 +5,18 @@ import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 
 const Home = () => {
   const [status, finished] = useState(false);
-  const [data, setData] = useState({ date: "" });
+  const [data, setData] = useState({ date: "", pacient: "" });
   const loadData = () => {
     if (status && data) {
       return (
         <div>
           <PDFViewer style={{ width: "100%", height: 450 }}>
-            <MyDocument date={data.date} />
+            <MyDocument date={data.date} pacient={data.pacient} />
           </PDFViewer>
 
           <PDFDownloadLink
             style={{ fontSize: 15, fontWeight: "bold " }}
-            document={<MyDocument data={data} />}
+            document={<MyDocument date={data.date} pacient={data.pacient} />}
             fileName="somename.pdf"
           >
             {({ blob, url, loading, error }) =>
@@ -30,7 +30,7 @@ const Home = () => {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    setData({ date: values.date });
+    setData({ date: values.date, pacient: values.pacient });
     finished(true);
   };
 

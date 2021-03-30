@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
   centerSection: {
     textAlign: "center",
   },
+  leftSection: {
+    textAlign: "left",
+  },
   title: {
     english: {
       fontSize: 16,
@@ -26,6 +29,7 @@ const styles = StyleSheet.create({
   },
   rightSection: {
     textAlign: "right",
+    marginRight: 50,
   },
   rowSection: {
     flexDirection: "row",
@@ -34,7 +38,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const MyDocument = ({ date }) => {
+const MyDocument = ({ date, pacient }) => {
   return (
     <>
       {date !== undefined ? (
@@ -49,6 +53,22 @@ const MyDocument = ({ date }) => {
               <View style={styles.rowSection} wrap>
                 <Text style={styles.title.date}>Fecha de prueba:</Text>
                 <Text style={styles.title.date}>{date}</Text>
+              </View>
+            </View>
+            <View style={styles.rowSection}>
+              <View style={styles.leftSection}>
+                <Text style={styles.title.date}>Name:</Text>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Nombre:</Text>
+                  <Text style={styles.title.date}>{pacient}</Text>
+                </View>
+              </View>
+              <View>
+                <Text style={styles.title.date}>Name:</Text>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Nombre:</Text>
+                  <Text style={styles.title.date}>{pacient}</Text>
+                </View>
               </View>
             </View>
           </Page>
