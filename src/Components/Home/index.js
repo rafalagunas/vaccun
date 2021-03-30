@@ -5,18 +5,34 @@ import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 
 const Home = () => {
   const [status, finished] = useState(false);
-  const [data, setData] = useState({ date: "", pacient: "" });
+  const [data, setData] = useState({});
   const loadData = () => {
     if (status && data) {
       return (
         <div>
           <PDFViewer style={{ width: "100%", height: 450 }}>
-            <MyDocument date={data.date} pacient={data.pacient} />
+            <MyDocument
+              date={data.date}
+              pacient={data.pacient}
+              folio={data.folio}
+              age={data.age}
+              birth_date={data.birth_date}
+              gender={data.gender}
+            />
           </PDFViewer>
 
           <PDFDownloadLink
             style={{ fontSize: 15, fontWeight: "bold " }}
-            document={<MyDocument date={data.date} pacient={data.pacient} />}
+            document={
+              <MyDocument
+                date={data.date}
+                pacient={data.pacient}
+                folio={data.folio}
+                age={data.age}
+                birth_date={data.birth_date}
+                gender={data.gender}
+              />
+            }
             fileName="somename.pdf"
           >
             {({ blob, url, loading, error }) =>
@@ -30,7 +46,14 @@ const Home = () => {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    setData({ date: values.date, pacient: values.pacient });
+    setData({
+      date: values.date,
+      pacient: values.pacient,
+      folio: values.folio,
+      age: values.age,
+      birth_date: values.birth_date,
+      gender: values.gender,
+    });
     finished(true);
   };
 
@@ -62,6 +85,13 @@ const Home = () => {
             <Input placeholder="Paciente" />
           </Form.Item>
           <Form.Item
+            label="Folio"
+            name="folio"
+            // rules={[{ required: true, message: "Agrega un título" }]}
+          >
+            <Input placeholder="Folio" />
+          </Form.Item>
+          <Form.Item
             label="Fecha Nacimiento Paciente"
             name="birth_date"
             // rules={[{ required: true, message: "Agrega un título" }]}
@@ -90,20 +120,7 @@ const Home = () => {
           >
             <Input placeholder="Resultado prueba" />
           </Form.Item>
-          <Form.Item
-            label="Género"
-            name="gender"
-            // rules={[{ required: true, message: "Agrega un título" }]}
-          >
-            <Input placeholder="Género" />
-          </Form.Item>
-          <Form.Item
-            label="Género"
-            name="gender"
-            // rules={[{ required: true, message: "Agrega un título" }]}
-          >
-            <Input placeholder="Género" />
-          </Form.Item>
+
           <Form.Item
             label="Observaciones"
             name="observations"

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const MyDocument = ({ date, pacient }) => {
+const MyDocument = ({ date, pacient, folio, age, birth_date, gender }) => {
   return (
     <>
       {date !== undefined ? (
@@ -55,7 +55,14 @@ const MyDocument = ({ date, pacient }) => {
                 <Text style={styles.title.date}>{date}</Text>
               </View>
             </View>
-            <View style={styles.rowSection}>
+            <View
+              style={{
+                flexDirection: "row",
+                marginRight: 80,
+                marginTop: 30,
+                alignSelf: "right",
+              }}
+            >
               <View style={styles.leftSection}>
                 <Text style={styles.title.date}>Name:</Text>
                 <View style={styles.rowSection} wrap>
@@ -63,11 +70,43 @@ const MyDocument = ({ date, pacient }) => {
                   <Text style={styles.title.date}>{pacient}</Text>
                 </View>
               </View>
+
               <View>
-                <Text style={styles.title.date}>Name:</Text>
+                <Text style={styles.title.date}>Age:</Text>
                 <View style={styles.rowSection} wrap>
-                  <Text style={styles.title.date}>Nombre:</Text>
-                  <Text style={styles.title.date}>{pacient}</Text>
+                  <Text style={styles.title.date}>Edad:</Text>
+                  <Text style={styles.title.date}>{age}</Text>
+                </View>
+              </View>
+              <View>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Folio:</Text>
+
+                  <Text style={styles.title.date}>{folio}</Text>
+                </View>
+              </View>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                marginRight: 80,
+                marginTop: 30,
+                alignSelf: "right",
+              }}
+            >
+              <View style={styles.leftSection}>
+                <Text style={styles.title.date}>Date of Birth:</Text>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Fecha de nacimiento:</Text>
+                  <Text style={styles.title.date}>{birth_date}</Text>
+                </View>
+              </View>
+
+              <View>
+                <Text style={styles.title.date}>Gender:</Text>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Género:</Text>
+                  <Text style={styles.title.date}>{gender}</Text>
                 </View>
               </View>
             </View>
