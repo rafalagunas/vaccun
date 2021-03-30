@@ -41,7 +41,7 @@ const Home = () => {
     <div>
       <div>
         <Form
-          style={{ width: "35%", padding: 10, textAlign: "center" }}
+          className="pdf-form"
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
