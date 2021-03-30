@@ -1,6 +1,14 @@
 import React from "react";
-import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
+import {
+  Page,
+  Text,
+  View,
+  Document,
+  StyleSheet,
+  Image,
+} from "@react-pdf/renderer";
 
+const image = require("./Header.png");
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -35,6 +43,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginRight: 80,
   },
+  image: {
+    width: "60%",
+    padding: 10,
+    backgroundColor: "grey",
+  },
 });
 
 // Create Document Component
@@ -53,6 +66,9 @@ const MyDocument = ({
       {date !== undefined ? (
         <Document>
           <Page size="A4" wrap style={styles.page}>
+            <View style={styles.image}>
+              <Image source={image} />
+            </View>
             <View style={styles.centerSection}>
               <Text style={styles.title.english}>Medical certificate</Text>
               <Text style={styles.title.spanish}>Certificado Médico</Text>
@@ -135,6 +151,17 @@ const MyDocument = ({
                   <Text style={styles.title.date}>{observations}</Text>
                 </View>
               </View>
+            </View>
+            <View fixed>
+              <Text>
+                Medical Center - LobbyCare Azuna Medical Center, Piso 9,
+                Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
+                LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
+                – Puerto Cancún Blvd. Kulkulcán km. 1.5, Puerto Juárez, Zona
+                Hotelera, T1500 Cancún, Q.R. Oficina Corporativa Ave Sayil Smz 6
+                Mz 5 Lote 2 Piso 11 Interior 1101 A, Plaza Azuna Cancún, Benito
+                Juárez, Q.R.
+              </Text>
             </View>
           </Page>
         </Document>
