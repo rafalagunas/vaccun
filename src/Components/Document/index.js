@@ -8,7 +8,6 @@ import {
   Image,
 } from "@react-pdf/renderer";
 
-const image = require("./Header.png");
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -44,9 +43,8 @@ const styles = StyleSheet.create({
     marginRight: 80,
   },
   image: {
-    width: "60%",
+    width: "100%",
     padding: 10,
-    backgroundColor: "grey",
   },
 });
 
@@ -67,7 +65,7 @@ const MyDocument = ({
         <Document>
           <Page size="A4" wrap style={styles.page}>
             <View style={styles.image}>
-              <Image source={image} />
+              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
             </View>
             <View style={styles.centerSection}>
               <Text style={styles.title.english}>Medical certificate</Text>
@@ -152,8 +150,19 @@ const MyDocument = ({
                 </View>
               </View>
             </View>
-            <View fixed>
-              <Text>
+            <View
+              style={{
+                position: "absolute",
+                height: 40,
+                left: "20%",
+                top: "100%",
+                width: "80%",
+                textAlign: "center",
+                margin: "0 auto",
+              }}
+              fixed
+            >
+              <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
                 Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
                 LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
