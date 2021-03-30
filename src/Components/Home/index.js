@@ -18,6 +18,8 @@ const Home = () => {
               age={data.age}
               birth_date={data.birth_date}
               gender={data.gender}
+              test_result={data.test_result}
+              observations={data.observations}
             />
           </PDFViewer>
 
@@ -31,6 +33,8 @@ const Home = () => {
                 age={data.age}
                 birth_date={data.birth_date}
                 gender={data.gender}
+                test_result={data.test_result}
+                observations={data.observations}
               />
             }
             fileName="somename.pdf"
@@ -53,6 +57,8 @@ const Home = () => {
       age: values.age,
       birth_date: values.birth_date,
       gender: values.gender,
+      test_result: values.test_result,
+      observations: values.observations,
     });
     finished(true);
   };

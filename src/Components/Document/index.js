@@ -38,7 +38,16 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const MyDocument = ({ date, pacient, folio, age, birth_date, gender }) => {
+const MyDocument = ({
+  date,
+  pacient,
+  folio,
+  age,
+  birth_date,
+  gender,
+  test_result,
+  observations,
+}) => {
   return (
     <>
       {date !== undefined ? (
@@ -107,6 +116,23 @@ const MyDocument = ({ date, pacient, folio, age, birth_date, gender }) => {
                 <View style={styles.rowSection} wrap>
                   <Text style={styles.title.date}>Género:</Text>
                   <Text style={styles.title.date}>{gender}</Text>
+                </View>
+              </View>
+            </View>
+            <View style={{ marginTop: 20 }}>
+              <View style={{ textAlign: "left", marginTop: 20 }}>
+                <Text style={styles.title.date}>Test resultant:</Text>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Resultado de la prueba:</Text>
+                  <Text style={styles.title.date}>{test_result}</Text>
+                </View>
+              </View>
+
+              <View style={{ marginTop: 20 }}>
+                <Text style={styles.title.date}>Observations:</Text>
+                <View style={styles.rowSection} wrap>
+                  <Text style={styles.title.date}>Observaciones:</Text>
+                  <Text style={styles.title.date}>{observations}</Text>
                 </View>
               </View>
             </View>
