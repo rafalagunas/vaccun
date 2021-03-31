@@ -154,7 +154,7 @@ const MyDocument = ({
                 </View>
               </View>
             </View>
-            <View style={{ textAlign: "left", marginTop: 20 }}>
+            <View style={{ textAlign: "left", marginTop: 13 }}>
               <Text style={styles.title.date}>ID:</Text>
               <View style={styles.rowSection} wrap>
                 <Text style={styles.title.date}>IFE:</Text>
@@ -162,7 +162,7 @@ const MyDocument = ({
                 <Image source={id_64} style={{ height: 100 }} />
               </View>
             </View>
-            <View style={{ textAlign: "left", marginTop: 20 }}>
+            <View style={{ textAlign: "left", marginTop: 13 }}>
               <Text style={styles.title.date}>TEST:</Text>
               <View style={styles.rowSection} wrap>
                 <Text style={styles.title.date}>Prueba:</Text>
