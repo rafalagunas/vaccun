@@ -58,7 +58,10 @@ const MyDocument = ({
   gender,
   test_result,
   observations,
+  id_64,
+  test_64,
 }) => {
+  console.log("ID", id_64);
   return (
     <>
       {date !== undefined ? (
@@ -67,6 +70,7 @@ const MyDocument = ({
             <View style={styles.image}>
               <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
             </View>
+
             <View style={styles.centerSection}>
               <Text style={styles.title.english}>Medical certificate</Text>
               <Text style={styles.title.spanish}>Certificado Médico</Text>
@@ -150,6 +154,22 @@ const MyDocument = ({
                 </View>
               </View>
             </View>
+            <View style={{ textAlign: "left", marginTop: 20 }}>
+              <Text style={styles.title.date}>ID:</Text>
+              <View style={styles.rowSection} wrap>
+                <Text style={styles.title.date}>IFE:</Text>
+
+                <Image source={id_64} style={{ height: 100 }} />
+              </View>
+            </View>
+            <View style={{ textAlign: "left", marginTop: 20 }}>
+              <Text style={styles.title.date}>TEST:</Text>
+              <View style={styles.rowSection} wrap>
+                <Text style={styles.title.date}>Prueba:</Text>
+                <Image source={test_64} style={{ height: 100 }} />
+              </View>
+            </View>
+
             <View
               style={{
                 position: "absolute",

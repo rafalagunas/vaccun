@@ -1,13 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import MyDocument from "../Document";
 import { Input, Button, Form, Upload } from "antd";
 import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 
+function getBase64(img, callback) {
+  const reader = new FileReader();
+  reader.addEventListener("load", () => callback(reader.result));
+  reader.readAsDataURL(img);
+}
 const Home = () => {
   const [status, finished] = useState(false);
   const [data, setData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [id_64, setID] = useState("");
+  const [test_64, setTest] = useState("");
+  const imageRef = useRef(null);
+
+  useCallback(() => {
+    console.log(imageRef);
+  }, [imageRef]);
+
   const loadData = () => {
-    if (status && data) {
+    if (status && data && id_64) {
       return (
         <div>
           <PDFViewer style={{ width: "100%", height: 450 }}>
@@ -20,9 +35,10 @@ const Home = () => {
               gender={data.gender}
               test_result={data.test_result}
               observations={data.observations}
+              id_64={id_64}
+              test_64={test_64}
             />
           </PDFViewer>
-
           <PDFDownloadLink
             style={{ fontSize: 15, fontWeight: "bold " }}
             document={
@@ -35,6 +51,8 @@ const Home = () => {
                 gender={data.gender}
                 test_result={data.test_result}
                 observations={data.observations}
+                id_64={id_64}
+                test_64={test_64}
               />
             }
             fileName="somename.pdf"
@@ -48,7 +66,8 @@ const Home = () => {
     }
   };
 
-  const getFileData = ({ blob, url, loading, error }) => {};
+  // const getFileData = ({ blob, url, loading, error }) => {};
+
   const onFinish = (values) => {
     setData({
       date: values.date,
@@ -67,8 +86,29 @@ const Home = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-  const onChange = (e) => {
-    setData({ image: e.target.files[0] });
+  const handleChange = (info) => {
+    if (info.file.status === "uploading") {
+      setLoading(true);
+
+      let url = URL.createObjectURL(info.file.originFileObj);
+      console.log(url);
+      getBase64(info.file.originFileObj, (id_64) => {
+        setID(id_64);
+        setLoading(false);
+      });
+    }
+  };
+
+  const handleTestChange = (info) => {
+    if (info.file.status === "uploading") {
+      setLoading(true);
+      let url = URL.createObjectURL(info.file.originFileObj);
+      console.log(url);
+      getBase64(info.file.originFileObj, (test_64) => {
+        setTest(test_64);
+        setLoading(false);
+      });
+    }
   };
 
   return (
@@ -139,7 +179,44 @@ const Home = () => {
           >
             <Input placeholder="Observaciones" />
           </Form.Item>
-
+          <Form.Item label="IFE">
+            <Upload
+              name="avatar"
+              listType="picture-card"
+              className="avatar-uploader"
+              showUploadList={false}
+              beforeUpload={() => console.log("uploading...")}
+              onChange={handleChange}
+            >
+              {id_64 ? (
+                <img src={id_64} alt="avatar" style={{ width: "100%" }} />
+              ) : (
+                <div>
+                  {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                  <div style={{ marginTop: 8 }}>Upload</div>
+                </div>
+              )}
+            </Upload>
+          </Form.Item>
+          <Form.Item label="Prueba">
+            <Upload
+              name="test"
+              listType="picture-card"
+              className="test-uploader"
+              showUploadList={false}
+              beforeUpload={() => console.log("uploading...")}
+              onChange={handleTestChange}
+            >
+              {id_64 ? (
+                <img src={test_64} alt="test" style={{ width: "100%" }} />
+              ) : (
+                <div>
+                  {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                  <div style={{ marginTop: 8 }}>Upload</div>
+                </div>
+              )}
+            </Upload>
+          </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Generar certificado
