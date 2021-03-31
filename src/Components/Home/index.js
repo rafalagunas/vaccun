@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import MyDocument from "../Document";
 import { Input, Button, Form, Upload } from "antd";
-import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 
 function getBase64(img, callback) {
