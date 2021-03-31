@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MyDocument from "../Document";
-import { Input, Button, Form } from "antd";
+import { Input, Button, Form, Upload } from "antd";
 import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 
 const Home = () => {
@@ -48,8 +48,8 @@ const Home = () => {
     }
   };
 
+  const getFileData = ({ blob, url, loading, error }) => {};
   const onFinish = (values) => {
-    console.log("Success:", values);
     setData({
       date: values.date,
       pacient: values.pacient,
@@ -61,11 +61,16 @@ const Home = () => {
       observations: values.observations,
     });
     finished(true);
+    console.log("Success:", data);
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+  const onChange = (e) => {
+    setData({ image: e.target.files[0] });
+  };
+
   return (
     <div>
       <div>
@@ -134,6 +139,7 @@ const Home = () => {
           >
             <Input placeholder="Observaciones" />
           </Form.Item>
+
           <Form.Item>
             <Button type="primary" htmlType="submit">
               Generar certificado
