@@ -71,7 +71,7 @@ const MyDocument = ({
               <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
             </View>
 
-            <View style={styles.centerSection}>
+            <View style={styles.leftSection}>
               <Text style={styles.title.english}>Medical certificate</Text>
               <Text style={styles.title.spanish}>Certificado Médico</Text>
             </View>

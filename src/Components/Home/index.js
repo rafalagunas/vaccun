@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import MyDocument from "../Document";
 import { Input, Button, Form, Upload } from "antd";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
@@ -21,6 +21,10 @@ const Home = () => {
     console.log(imageRef);
   }, [imageRef]);
 
+  useEffect(()=>{
+    let foo = prompt("Ingrese contraseña");
+    console.log(foo);
+  },[])
   const loadData = () => {
     if (status && data && id_64) {
       return (
