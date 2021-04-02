@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import MyDocument from "../Document";
-import { Input, Button, Form, Upload, Select, InputNumber, Row } from "antd";
+import { Input, Button, Form, Upload, Select, Row } from "antd";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import * as QrCode from "qrcode.react";
@@ -20,10 +20,12 @@ const Home = () => {
   const [qr_64, setQr_64] = useState("");
   const imageRef = useRef(null);
 
-  const [qr, setQr] = useState("10");
-  function onChangeNumber(value) {
-    setQr(value.toString());
-  }
+  const [qr, setQr] = useState({
+    nombre: "",
+  });
+  const onChangeURL = (event) => {
+    setQr(event.target.value);
+  };
 
   const { Option } = Select;
 
@@ -35,8 +37,8 @@ const Home = () => {
   }, [imageRef]);
 
   useEffect(() => {
-    // let foo = prompt("Ingrese contraseña");
-    // console.log(foo);
+    let foo = prompt("Ingrese contraseña");
+    console.log(foo);
   }, []);
   const loadData = () => {
     if (status && data && id_64) {
@@ -180,11 +182,7 @@ const Home = () => {
             label="Número de Folio"
             name="folio"
             rules={[{ required: true, message: "Agrega el número de Folio" }]}>
-            <Input
-              defaultValue="00010"
-              onChange={onChangeNumber}
-              style={{ display: "block" }}
-            />
+            <Input defaultValue="00010" style={{ display: "block" }} />
           </Form.Item>
           <Form.Item
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
@@ -251,6 +249,24 @@ const Home = () => {
             // rules={[{ required: true, message: "Agrega un título" }]}
           >
             <Input placeholder="Observaciones" style={{ display: "block" }} />
+          </Form.Item>
+          <Form.Item
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            label="URL carpeta"
+            // name="url"
+            rules={[
+              {
+                required: true,
+                message: "Agrega la URL de la carpeta del paciente",
+              },
+            ]}>
+            <Input
+              placeholder="URL del paciente"
+              onChange={onChangeURL}
+              style={{ display: "block" }}
+              type="text"
+              name="nombre"
+            />
           </Form.Item>
           <Row
             style={{ width: "50%", margin: "0 auto" }}

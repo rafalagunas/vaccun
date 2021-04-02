@@ -90,7 +90,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
@@ -100,13 +100,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Test Date:</Text>
-                    <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
+                    <Text style={{ fontSize: "11" }}>Test Date:</Text>
+                    <Text style={{ fontSize: "10" }}>Fecha de prueba:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "12",
+                        fontSize: "11",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -123,13 +123,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Folio Number:</Text>
-                    <Text style={{ fontSize: "11" }}>Número de Folio:</Text>
+                    <Text style={{ fontSize: "11" }}>Folio Number:</Text>
+                    <Text style={{ fontSize: "10" }}>Número de Folio:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -146,7 +146,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
@@ -156,13 +156,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Name:</Text>
-                    <Text style={{ fontSize: "11" }}>Nombre:</Text>
+                    <Text style={{ fontSize: "11" }}>Name:</Text>
+                    <Text style={{ fontSize: "10" }}>Nombre:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -179,13 +179,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Date of Birh:</Text>
-                    <Text style={{ fontSize: "11" }}>Fecha de Nacimiento:</Text>
+                    <Text style={{ fontSize: "11" }}>Date of Birh:</Text>
+                    <Text style={{ fontSize: "10" }}>Fecha de Nacimiento:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -202,7 +202,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
@@ -212,13 +212,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Age:</Text>
-                    <Text style={{ fontSize: "11" }}>Edad:</Text>
+                    <Text style={{ fontSize: "11" }}>Age:</Text>
+                    <Text style={{ fontSize: "10" }}>Edad:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -235,13 +235,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Gender:</Text>
-                    <Text style={{ fontSize: "11" }}>Genero:</Text>
+                    <Text style={{ fontSize: "11" }}>Gender:</Text>
+                    <Text style={{ fontSize: "10" }}>Genero:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -258,7 +258,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
@@ -268,12 +268,12 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>
+                    <Text style={{ fontSize: "11" }}>
                       I hereby certify that the patient:
                     </Text>
                     <Text
                       style={{
-                        fontSize: "13",
+                        fontSize: "12",
                         paddingRight: "20px",
                         textDecoration: "underline",
                       }}>
@@ -292,12 +292,12 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>
+                    <Text style={{ fontSize: "11" }}>
                       Por medio del presente certifico que el paciente:
                     </Text>
                     <Text
                       style={{
-                        fontSize: "13",
+                        fontSize: "12",
                         paddingRight: "20px",
                         textDecoration: "underline",
                       }}>
@@ -316,7 +316,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
@@ -326,8 +326,8 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Name of the Test:</Text>
-                    <Text style={{ fontSize: "11", paddingRight: "20px" }}>
+                    <Text style={{ fontSize: "11" }}>Name of the Test:</Text>
+                    <Text style={{ fontSize: "10", paddingRight: "20px" }}>
                       COVID 19 Detection Antigen. Qualitative.
                       Inmunochromatography. Ag SARS COV 2 Roche * COFEPRIS
                       Authorization: CAS/SESSDM/17969/2020
@@ -342,8 +342,8 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Nombre de la Prueba:</Text>
-                    <Text style={{ fontSize: "11" }}>
+                    <Text style={{ fontSize: "11" }}>Nombre de la Prueba:</Text>
+                    <Text style={{ fontSize: "10" }}>
                       Antígeno de detección COVID 19. Cualitativo
                       Inmunocromatográfica. Reactivo Ag SARS COV 2 Roche *
                       Autorización COFEPRIS: CAS/SESSDM/17969/2020
@@ -358,7 +358,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
@@ -368,13 +368,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Test Resultant:</Text>
                     <Text style={{ fontSize: "11" }}>Test Resultant:</Text>
+                    <Text style={{ fontSize: "10" }}>Test Resultant:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "17",
+                        fontSize: "14",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
@@ -391,7 +391,7 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
+                  marginBottom: "25px",
                 }}>
                 <View
                   style={{
@@ -401,13 +401,13 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Observations:</Text>
-                    <Text style={{ fontSize: "11" }}>Observaciones:</Text>
+                    <Text style={{ fontSize: "11" }}>Observations:</Text>
+                    <Text style={{ fontSize: "10" }}>Observaciones:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "11",
+                        fontSize: "10",
                         fontWeight: "700",
                         paddingLeft: "20px",
                       }}>
@@ -419,14 +419,14 @@ const MyDocument = ({
               {/* FIRMA */}
               <View
                 style={{
-                  marginBottom: "20px",
+                  marginBottom: "15px",
                 }}>
                 <View
                   style={{
                     display: "flex",
                     justifyContent: "center",
                     textAlign: "left",
-                    marginBottom: "20px",
+                    marginBottom: "15px",
                   }}>
                   <View>
                     <Text
@@ -445,7 +445,14 @@ const MyDocument = ({
                       Se emite certificado para los fines que al paciente
                       convenga.
                     </Text>
-                    <Image source="https://github.com/rafalagunas/vaccun/blob/27cf32244bf8715d5f520b71d38bcf7e3108b5bc/src/Components/Document/banner.png" />
+                    <Image
+                      style={{
+                        width: "68px",
+                        height: "28px",
+                        marginBottom: "10px",
+                      }}
+                      source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/firma.png"
+                    />
                     <Text
                       style={{
                         fontSize: "11",
@@ -457,6 +464,7 @@ const MyDocument = ({
                       style={{
                         fontSize: "11",
                         fontWeight: "600",
+                        marginBottom: "10px",
                       }}>
                       Cedula Profesional 2847019
                     </Text>
