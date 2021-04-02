@@ -3,7 +3,7 @@ import MyDocument from "../Document";
 import { Input, Button, Form, Upload, Select, InputNumber, Row } from "antd";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-import QRCode from "react-qr-code";
+import * as QrCode from "qrcode.react";
 
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -17,7 +17,9 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [id_64, setID] = useState("");
   const [test_64, setTest] = useState("");
+  const [qr_64, setQr_64] = useState("");
   const imageRef = useRef(null);
+
 
   const [qr, setQr] = useState("10");
   function onChangeNumber(value) {
@@ -34,8 +36,8 @@ const Home = () => {
   }, [imageRef]);
 
   useEffect(() => {
-    let foo = prompt("Ingrese contraseña");
-    console.log(foo);
+    // let foo = prompt("Ingrese contraseña");
+    // console.log(foo);
   }, []);
   const loadData = () => {
     if (status && data && id_64) {
@@ -53,6 +55,7 @@ const Home = () => {
               observations={data.observations}
               id_64={id_64}
               test_64={test_64}
+              qr_64={qr_64}
             />
           </PDFViewer>
           <PDFDownloadLink
@@ -69,6 +72,7 @@ const Home = () => {
                 observations={data.observations}
                 id_64={id_64}
                 test_64={test_64}
+                qr_64={qr_64}
               />
             }
             fileName="somename.pdf"
@@ -85,6 +89,7 @@ const Home = () => {
   // const getFileData = ({ blob, url, loading, error }) => {};
 
   const onFinish = (values) => {
+    getImage();
     setData({
       date: values.date,
       pacient: values.pacient,
@@ -128,6 +133,14 @@ const Home = () => {
     }
   };
 
+  const getImage = () =>{
+    let canvas = document.getElementById("qrCode");
+    
+    if(canvas!== null){
+      let dataURL = canvas.toDataURL();
+     setQr_64(dataURL);
+    }
+  }
   return (
     <div>
       <div>
@@ -317,10 +330,13 @@ const Home = () => {
           <div
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
           >
-            <QRCode
+            <QrCode
               value={qr}
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              id="qrCode"
             />
+   
+     
           </div>
         </Form>
       </div>

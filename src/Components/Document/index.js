@@ -61,8 +61,9 @@ const MyDocument = ({
   observations,
   id_64,
   test_64,
+  qr_64
 }) => {
-  console.log("ID", id_64);
+  console.log("QR_64", qr_64);
   return (
     <>
       {date !== undefined ? (
@@ -71,7 +72,9 @@ const MyDocument = ({
             <View style={styles.image}>
               <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
             </View>
-
+            <View style={styles.image}>
+              <Image source={qr_64} />
+            </View>
             <View style={{ marginBottom: "40px", textAlign: "center" }}>
               <Text style={styles.title.english}>Medical certificate</Text>
               <Text style={styles.title.spanish}>Certificado Médico</Text>
