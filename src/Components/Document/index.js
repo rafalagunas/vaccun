@@ -510,7 +510,7 @@ const MyDocument = ({
               fixed>
               <Image
                 style={styles.image}
-                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png"
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer1.jpg"
               />
               {/* <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
@@ -600,24 +600,16 @@ const MyDocument = ({
             <View
               style={{
                 position: "absolute",
-                height: 40,
                 left: "0",
                 right: "0",
-                top: "100%",
-                padding: "0 10%",
+                top: "80%",
                 margin: "0 auto",
-                textAlign: "center",
               }}
               fixed>
-              <Text style={{ fontWeight: "bold", fontSize: 8 }}>
-                Medical Center - LobbyCare Azuna Medical Center, Piso 9,
-                Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
-                LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
-                – Puerto Cancún Blvd. Kulkulcán km. 1.5, Puerto Juárez, Zona
-                Hotelera, T1500 Cancún, Q.R. Oficina Corporativa Ave Sayil Smz 6
-                Mz 5 Lote 2 Piso 11 Interior 1101 A, Plaza Azuna Cancún, Benito
-                Juárez, Q.R.
-              </Text>
+              <Image
+                style={styles.image}
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer2.jpg"
+              />
             </View>
           </Page>
 
@@ -695,24 +687,19 @@ const MyDocument = ({
             <View
               style={{
                 position: "absolute",
-                height: 40,
+                // height: 40,
                 left: "0",
                 right: "0",
-                top: "100%",
-                padding: "0 10%",
+                top: "80%",
+                // padding: "0 10%",
                 margin: "0 auto",
-                textAlign: "center",
+                // textAlign: "center",
               }}
               fixed>
-              <Text style={{ fontWeight: "bold", fontSize: 8 }}>
-                Medical Center - LobbyCare Azuna Medical Center, Piso 9,
-                Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
-                LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
-                – Puerto Cancún Blvd. Kulkulcán km. 1.5, Puerto Juárez, Zona
-                Hotelera, T1500 Cancún, Q.R. Oficina Corporativa Ave Sayil Smz 6
-                Mz 5 Lote 2 Piso 11 Interior 1101 A, Plaza Azuna Cancún, Benito
-                Juárez, Q.R.
-              </Text>
+              <Image
+                style={styles.image}
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer2.jpg"
+              />
             </View>
           </Page>
         </Document>
