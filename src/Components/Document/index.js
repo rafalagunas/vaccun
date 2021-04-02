@@ -687,13 +687,10 @@ const MyDocument = ({
             <View
               style={{
                 position: "absolute",
-                // height: 40,
                 left: "0",
                 right: "0",
                 top: "80%",
-                // padding: "0 10%",
                 margin: "0 auto",
-                // textAlign: "center",
               }}
               fixed>
               <Image
