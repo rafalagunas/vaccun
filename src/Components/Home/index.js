@@ -1,14 +1,16 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import MyDocument from "../Document";
-import { Input, Button, Form, Upload } from "antd";
+import { Input, Button, Form, Upload, Select, InputNumber, Row } from "antd";
 import { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+import QRCode from "react-qr-code";
 
 function getBase64(img, callback) {
   const reader = new FileReader();
   reader.addEventListener("load", () => callback(reader.result));
   reader.readAsDataURL(img);
 }
+
 const Home = () => {
   const [status, finished] = useState(false);
   const [data, setData] = useState({});
@@ -17,14 +19,24 @@ const Home = () => {
   const [test_64, setTest] = useState("");
   const imageRef = useRef(null);
 
+  const [qr, setQr] = useState("10");
+  function onChangeNumber(value) {
+    setQr(value.toString());
+  }
+
+  const { Option } = Select;
+
+  function handleChangeGener(value) {}
+  function handleChangeTest(value) {}
+
   useCallback(() => {
     console.log(imageRef);
   }, [imageRef]);
 
-  useEffect(()=>{
+  useEffect(() => {
     let foo = prompt("Ingrese contraseña");
     console.log(foo);
-  },[])
+  }, []);
   const loadData = () => {
     if (status && data && id_64) {
       return (
@@ -90,6 +102,7 @@ const Home = () => {
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
+
   const handleChange = (info) => {
     if (info.file.status === "uploading") {
       setLoading(true);
@@ -119,6 +132,12 @@ const Home = () => {
     <div>
       <div>
         <Form
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            margin: "0 auto",
+          }}
           className="pdf-form"
           name="basic"
           initialValues={{ remember: true }}
@@ -126,106 +145,183 @@ const Home = () => {
           onFinishFailed={onFinishFailed}
         >
           <Form.Item
-            label="Fecha"
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            label="Fecha de Prueba"
             name="date"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[{ required: true, message: "Agrega una fecha" }]}
           >
-            <Input placeholder="Fecha" />
+            <Input
+              style={{ display: "block" }}
+              placeholder="2021/02/30"
+              type="datetime-local"
+            />
           </Form.Item>
           <Form.Item
-            label="Nombre paciente"
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            label="Nombre Completo del Paciente"
             name="pacient"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[{ required: true, message: "Agrega el nombre completo" }]}
           >
-            <Input placeholder="Paciente" />
+            <Input style={{ display: "block" }} placeholder="Nombre" />
           </Form.Item>
           <Form.Item
-            label="Folio"
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            label="Número de Folio"
             name="folio"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[{ required: true, message: "Agrega el número de Folio" }]}
           >
-            <Input placeholder="Folio" />
+            <InputNumber
+              onChange={onChangeNumber}
+              style={{ display: "block" }}
+            />
           </Form.Item>
           <Form.Item
-            label="Fecha Nacimiento Paciente"
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            label="Fecha Nacimiento del Paciente"
             name="birth_date"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[
+              { required: true, message: "Agrega la fecha de nacimiento" },
+            ]}
           >
-            <Input placeholder="Fecha nacimiento" />
+            <Input
+              type="date"
+              placeholder="Fecha de nacimiento"
+              style={{ display: "block" }}
+            />
           </Form.Item>
           <Form.Item
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            label="Email"
+            name="mail"
+            rules={[{ required: true, message: "Agrega el Email" }]}
+          >
+            <Input
+              type="email"
+              placeholder="Email"
+              style={{ display: "block" }}
+            />
+          </Form.Item>
+          <Form.Item
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Edad"
             name="age"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[{ required: true, message: "Agrega la edad" }]}
           >
-            <Input placeholder="Edad" />
+            <Input placeholder="Edad" style={{ display: "block" }} />
           </Form.Item>
           <Form.Item
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Género"
             name="gender"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[{ required: true, message: "Selecciona el género" }]}
           >
-            <Input placeholder="Género" />
+            <Select
+              style={{ width: "100%", display: "block" }}
+              onChange={handleChangeGener}
+            >
+              <Option value="Male / Masculino">Male / Masculino</Option>
+              <Option value="Famele / Femenimo">Famele / Femenimo</Option>
+              <Option value="Other / Otro">Other / Otro</Option>
+            </Select>
           </Form.Item>
 
           <Form.Item
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Resultado prueba"
             name="test_result"
-            // rules={[{ required: true, message: "Agrega un título" }]}
+            rules={[{ required: true, message: "Agrega el resultado" }]}
           >
-            <Input placeholder="Resultado prueba" />
+            {/* <Input placeholder="Resultado prueba" /> */}
+            <Select
+              style={{ width: "100%", display: "block" }}
+              onChange={handleChangeTest}
+            >
+              <Option value="POSITIVE / POSITIVO">POSITIVE / POSITIVO</Option>
+              <Option value="NEGATIVE / NEGATIVO">NEGATIVE / NEGATIVO</Option>
+            </Select>
           </Form.Item>
 
           <Form.Item
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Observaciones"
             name="observations"
             // rules={[{ required: true, message: "Agrega un título" }]}
           >
-            <Input placeholder="Observaciones" />
+            <Input placeholder="Observaciones" style={{ display: "block" }} />
           </Form.Item>
-          <Form.Item label="IFE">
-            <Upload
-              name="avatar"
-              listType="picture-card"
-              className="avatar-uploader"
-              showUploadList={false}
-              beforeUpload={() => console.log("uploading...")}
-              onChange={handleChange}
+          <Row
+            style={{ width: "50%", margin: "0 auto" }}
+            justify="center"
+            align="middle"
+          >
+            <Form.Item
+              label="Cargar identificación"
+              style={{
+                fontWeight: "bold",
+                width: "50%",
+                margin: "20px auto",
+                display: "block",
+              }}
             >
-              {id_64 ? (
-                <img src={id_64} alt="avatar" style={{ width: "100%" }} />
-              ) : (
-                <div>
-                  {loading ? <LoadingOutlined /> : <PlusOutlined />}
-                  <div style={{ marginTop: 8 }}>Upload</div>
-                </div>
-              )}
-            </Upload>
-          </Form.Item>
-          <Form.Item label="Prueba">
-            <Upload
-              name="test"
-              listType="picture-card"
-              className="test-uploader"
-              showUploadList={false}
-              beforeUpload={() => console.log("uploading...")}
-              onChange={handleTestChange}
+              <Upload
+                name="avatar"
+                listType="picture-card"
+                className="avatar-uploader"
+                showUploadList={false}
+                beforeUpload={() => console.log("uploading...")}
+                onChange={handleChange}
+              >
+                {id_64 ? (
+                  <img src={id_64} alt="avatar" style={{ width: "100%" }} />
+                ) : (
+                  <div>
+                    {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                    <div style={{ marginTop: 8 }}>Cargar</div>
+                  </div>
+                )}
+              </Upload>
+            </Form.Item>
+            <Form.Item
+              label="Cargar prueba"
+              style={{
+                fontWeight: "bold",
+                width: "50%",
+                margin: "20px auto",
+                display: "block",
+              }}
             >
-              {id_64 ? (
-                <img src={test_64} alt="test" style={{ width: "100%" }} />
-              ) : (
-                <div>
-                  {loading ? <LoadingOutlined /> : <PlusOutlined />}
-                  <div style={{ marginTop: 8 }}>Upload</div>
-                </div>
-              )}
-            </Upload>
-          </Form.Item>
+              <Upload
+                name="test"
+                listType="picture-card"
+                className="test-uploader"
+                showUploadList={false}
+                beforeUpload={() => console.log("uploading...")}
+                onChange={handleTestChange}
+              >
+                {id_64 ? (
+                  <img src={test_64} alt="test" style={{ width: "100%" }} />
+                ) : (
+                  <div>
+                    {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                    <div style={{ marginTop: 8 }}>Cargar</div>
+                  </div>
+                )}
+              </Upload>
+            </Form.Item>
+          </Row>
           <Form.Item>
             <Button type="primary" htmlType="submit">
-              Generar certificado
+              Generar Certificado
             </Button>
           </Form.Item>
+          <div
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+          >
+            <QRCode
+              value={qr}
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+            />
+          </div>
         </Form>
       </div>
 
