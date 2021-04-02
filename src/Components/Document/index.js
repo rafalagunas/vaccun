@@ -61,7 +61,7 @@ const MyDocument = ({
   observations,
   id_64,
   test_64,
-  qr_64
+  qr_64,
 }) => {
   console.log("QR_64", qr_64);
   return (
@@ -72,12 +72,10 @@ const MyDocument = ({
             <View style={styles.image}>
               <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
             </View>
-            <View style={styles.image}>
-              <Image source={qr_64} />
-            </View>
-            <View style={{ marginBottom: "40px", textAlign: "center" }}>
-              <Text style={styles.title.english}>Medical certificate</Text>
-              <Text style={styles.title.spanish}>Certificado Médico</Text>
+
+            <View style={{ marginBottom: "20px", textAlign: "center" }}>
+              <Text style={{ fontSize: "15" }}>Medical certificate</Text>
+              <Text style={{ fontSize: "14" }}>Certificado Médico</Text>
             </View>
 
             <View
@@ -85,8 +83,7 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 60px",
-              }}
-            >
+              }}>
               <View
                 style={{
                   display: "flex",
@@ -94,16 +91,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -115,8 +110,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {date}
                     </Text>
                   </View>
@@ -127,8 +121,7 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Folio Number:</Text>
                     <Text style={{ fontSize: "11" }}>Número de Folio:</Text>
@@ -140,8 +133,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {folio}
                     </Text>
                   </View>
@@ -155,16 +147,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Name:</Text>
                     <Text style={{ fontSize: "11" }}>Nombre:</Text>
@@ -176,8 +166,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {pacient}
                     </Text>
                   </View>
@@ -188,8 +177,7 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Date of Birh:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de Nacimiento:</Text>
@@ -201,8 +189,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {birth_date}
                     </Text>
                   </View>
@@ -216,16 +203,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Age:</Text>
                     <Text style={{ fontSize: "11" }}>Edad:</Text>
@@ -237,8 +222,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {age}
                     </Text>
                   </View>
@@ -249,8 +233,7 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Gender:</Text>
                     <Text style={{ fontSize: "11" }}>Genero:</Text>
@@ -262,8 +245,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {gender}
                     </Text>
                   </View>
@@ -277,16 +259,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>
                       I hereby certify that the patient:
@@ -296,8 +276,7 @@ const MyDocument = ({
                         fontSize: "13",
                         paddingRight: "20px",
                         textDecoration: "underline",
-                      }}
-                    >
+                      }}>
                       {pacient}
                     </Text>
                     <Text style={{ fontSize: "11", paddingRight: "20px" }}>
@@ -311,8 +290,7 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>
                       Por medio del presente certifico que el paciente:
@@ -322,8 +300,7 @@ const MyDocument = ({
                         fontSize: "13",
                         paddingRight: "20px",
                         textDecoration: "underline",
-                      }}
-                    >
+                      }}>
                       {pacient}
                     </Text>
                     <Text style={{ fontSize: "11" }}>
@@ -340,16 +317,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Name of the Test:</Text>
                     <Text style={{ fontSize: "11", paddingRight: "20px" }}>
@@ -365,8 +340,7 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Nombre de la Prueba:</Text>
                     <Text style={{ fontSize: "11" }}>
@@ -385,16 +359,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Resultant:</Text>
                     <Text style={{ fontSize: "11" }}>Test Resultant:</Text>
@@ -406,8 +378,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {test_result}
                     </Text>
                   </View>
@@ -421,16 +392,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Observations:</Text>
                     <Text style={{ fontSize: "11" }}>Observaciones:</Text>
@@ -441,14 +410,84 @@ const MyDocument = ({
                         fontSize: "11",
                         fontWeight: "700",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {observations}
                     </Text>
                   </View>
                 </View>
               </View>
+              {/* FIRMA */}
+              <View
+                style={{
+                  marginBottom: "20px",
+                }}>
+                <View
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "left",
+                    marginBottom: "20px",
+                  }}>
+                  <View>
+                    <Text
+                      style={{
+                        fontSize: "11",
+                        fontWeight: "600",
+                      }}>
+                      Certificate is issued for the purposes that the patient
+                      agrees.
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: "11",
+                        fontWeight: "600",
+                      }}>
+                      Se emite certificado para los fines que al paciente
+                      convenga.
+                    </Text>
+                    <Image source="https://github.com/rafalagunas/vaccun/blob/27cf32244bf8715d5f520b71d38bcf7e3108b5bc/src/Components/Document/banner.png" />
+                    <Text
+                      style={{
+                        fontSize: "11",
+                        fontWeight: "600",
+                      }}>
+                      Dra. María Teresa Chavez Espinoza
+                    </Text>
+                    <Text
+                      style={{
+                        fontSize: "11",
+                        fontWeight: "600",
+                      }}>
+                      Cedula Profesional 2847019
+                    </Text>
+                  </View>
+                  {/* QR */}
+                  <View
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      margin: "0 auto",
+                    }}>
+                    <View
+                      style={{
+                        width: "100%",
+                        margin: "0 auto",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}>
+                      <Image
+                        source={qr_64}
+                        style={{ width: "50px", height: "50px" }}
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+              {/* fin */}
             </View>
+
             <View
               style={{
                 position: "absolute",
@@ -460,8 +499,7 @@ const MyDocument = ({
                 margin: "0 auto",
                 textAlign: "center",
               }}
-              fixed
-            >
+              fixed>
               <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
                 Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
@@ -483,8 +521,7 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 30px",
-              }}
-            >
+              }}>
               <View
                 style={{
                   display: "flex",
@@ -492,16 +529,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -513,8 +548,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {date}
                     </Text>
                   </View>
@@ -528,16 +562,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Patient ID:</Text>
                     <Text style={{ fontSize: "11" }}>
@@ -564,8 +596,7 @@ const MyDocument = ({
                 margin: "0 auto",
                 textAlign: "center",
               }}
-              fixed
-            >
+              fixed>
               <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
                 Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
@@ -587,8 +618,7 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 30px",
-              }}
-            >
+              }}>
               <View
                 style={{
                   display: "flex",
@@ -596,16 +626,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -617,8 +645,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {date}
                     </Text>
                   </View>
@@ -632,16 +659,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Evidence:</Text>
                     <Text style={{ fontSize: "11" }}>Foto de la prueba:</Text>
@@ -666,8 +691,7 @@ const MyDocument = ({
                 margin: "0 auto",
                 textAlign: "center",
               }}
-              fixed
-            >
+              fixed>
               <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
                 Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5

@@ -20,7 +20,6 @@ const Home = () => {
   const [qr_64, setQr_64] = useState("");
   const imageRef = useRef(null);
 
-
   const [qr, setQr] = useState("10");
   function onChangeNumber(value) {
     setQr(value.toString());
@@ -75,8 +74,7 @@ const Home = () => {
                 qr_64={qr_64}
               />
             }
-            fileName="somename.pdf"
-          >
+            fileName="somename.pdf">
             {({ blob, url, loading, error }) =>
               loading ? "Loading document..." : "Download now!"
             }
@@ -133,17 +131,20 @@ const Home = () => {
     }
   };
 
-  const getImage = () =>{
+  const getImage = () => {
     let canvas = document.getElementById("qrCode");
-    
-    if(canvas!== null){
+
+    if (canvas !== null) {
       let dataURL = canvas.toDataURL();
-     setQr_64(dataURL);
+      setQr_64(dataURL);
     }
-  }
+  };
   return (
     <div>
       <div>
+        <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
+          Completa los campos del paciente:
+        </h1>
         <Form
           style={{
             display: "flex",
@@ -155,14 +156,12 @@ const Home = () => {
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-        >
+          onFinishFailed={onFinishFailed}>
           <Form.Item
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Fecha de Prueba"
             name="date"
-            rules={[{ required: true, message: "Agrega una fecha" }]}
-          >
+            rules={[{ required: true, message: "Agrega una fecha" }]}>
             <Input
               style={{ display: "block" }}
               placeholder="2021/02/30"
@@ -173,17 +172,16 @@ const Home = () => {
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Nombre Completo del Paciente"
             name="pacient"
-            rules={[{ required: true, message: "Agrega el nombre completo" }]}
-          >
+            rules={[{ required: true, message: "Agrega el nombre completo" }]}>
             <Input style={{ display: "block" }} placeholder="Nombre" />
           </Form.Item>
           <Form.Item
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Número de Folio"
             name="folio"
-            rules={[{ required: true, message: "Agrega el número de Folio" }]}
-          >
-            <InputNumber
+            rules={[{ required: true, message: "Agrega el número de Folio" }]}>
+            <Input
+              defaultValue="00010"
               onChange={onChangeNumber}
               style={{ display: "block" }}
             />
@@ -194,8 +192,7 @@ const Home = () => {
             name="birth_date"
             rules={[
               { required: true, message: "Agrega la fecha de nacimiento" },
-            ]}
-          >
+            ]}>
             <Input
               type="date"
               placeholder="Fecha de nacimiento"
@@ -206,8 +203,7 @@ const Home = () => {
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Email"
             name="mail"
-            rules={[{ required: true, message: "Agrega el Email" }]}
-          >
+            rules={[{ required: true, message: "Agrega el Email" }]}>
             <Input
               type="email"
               placeholder="Email"
@@ -218,20 +214,17 @@ const Home = () => {
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Edad"
             name="age"
-            rules={[{ required: true, message: "Agrega la edad" }]}
-          >
+            rules={[{ required: true, message: "Agrega la edad" }]}>
             <Input placeholder="Edad" style={{ display: "block" }} />
           </Form.Item>
           <Form.Item
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Género"
             name="gender"
-            rules={[{ required: true, message: "Selecciona el género" }]}
-          >
+            rules={[{ required: true, message: "Selecciona el género" }]}>
             <Select
               style={{ width: "100%", display: "block" }}
-              onChange={handleChangeGener}
-            >
+              onChange={handleChangeGener}>
               <Option value="Male / Masculino">Male / Masculino</Option>
               <Option value="Famele / Femenimo">Famele / Femenimo</Option>
               <Option value="Other / Otro">Other / Otro</Option>
@@ -242,13 +235,10 @@ const Home = () => {
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Resultado prueba"
             name="test_result"
-            rules={[{ required: true, message: "Agrega el resultado" }]}
-          >
-            {/* <Input placeholder="Resultado prueba" /> */}
+            rules={[{ required: true, message: "Agrega el resultado" }]}>
             <Select
               style={{ width: "100%", display: "block" }}
-              onChange={handleChangeTest}
-            >
+              onChange={handleChangeTest}>
               <Option value="POSITIVE / POSITIVO">POSITIVE / POSITIVO</Option>
               <Option value="NEGATIVE / NEGATIVO">NEGATIVE / NEGATIVO</Option>
             </Select>
@@ -265,8 +255,7 @@ const Home = () => {
           <Row
             style={{ width: "50%", margin: "0 auto" }}
             justify="center"
-            align="middle"
-          >
+            align="middle">
             <Form.Item
               label="Cargar identificación"
               style={{
@@ -274,16 +263,14 @@ const Home = () => {
                 width: "50%",
                 margin: "20px auto",
                 display: "block",
-              }}
-            >
+              }}>
               <Upload
                 name="avatar"
                 listType="picture-card"
                 className="avatar-uploader"
                 showUploadList={false}
                 beforeUpload={() => console.log("uploading...")}
-                onChange={handleChange}
-              >
+                onChange={handleChange}>
                 {id_64 ? (
                   <img src={id_64} alt="avatar" style={{ width: "100%" }} />
                 ) : (
@@ -301,16 +288,14 @@ const Home = () => {
                 width: "50%",
                 margin: "20px auto",
                 display: "block",
-              }}
-            >
+              }}>
               <Upload
                 name="test"
                 listType="picture-card"
                 className="test-uploader"
                 showUploadList={false}
                 beforeUpload={() => console.log("uploading...")}
-                onChange={handleTestChange}
-              >
+                onChange={handleTestChange}>
                 {id_64 ? (
                   <img src={test_64} alt="test" style={{ width: "100%" }} />
                 ) : (
@@ -328,15 +313,17 @@ const Home = () => {
             </Button>
           </Form.Item>
           <div
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-          >
+            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}>
             <QrCode
               value={qr}
-              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              style={{
+                fontWeight: "bold",
+                width: "10%",
+                height: "10%",
+                margin: "20px auto",
+              }}
               id="qrCode"
             />
-   
-     
           </div>
         </Form>
       </div>
