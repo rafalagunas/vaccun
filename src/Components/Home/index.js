@@ -245,21 +245,14 @@ const Home = () => {
           <Form.Item
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="Observaciones"
-            name="observations"
-            // rules={[{ required: true, message: "Agrega un título" }]}
-          >
+            name="observations">
             <Input placeholder="Observaciones" style={{ display: "block" }} />
           </Form.Item>
           <Form.Item
             style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
             label="URL carpeta"
-            // name="url"
-            rules={[
-              {
-                required: true,
-                message: "Agrega la URL de la carpeta del paciente",
-              },
-            ]}>
+            name="nombre"
+            rules={[{ required: true, message: "Agrega la URL del paciente" }]}>
             <Input
               placeholder="URL del paciente"
               onChange={onChangeURL}
