@@ -145,7 +145,19 @@ const Home = () => {
       setQr_64(dataURL);
     }
   };
+
   const [nombre, setNombre] = useState(window.localStorage.getItem("nombre"));
+  const nameInput = useRef(null);
+
+  const setLocalStorageName = (value) => {
+    try {
+      setNombre(value);
+      window.localStorage.setItem("nombre", value);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const [folio, setFolio] = useState(window.localStorage.getItem("folio"));
   const [date, setDate] = useState(window.localStorage.getItem("date"));
   const [nace, setNace] = useState(window.localStorage.getItem("nace"));
@@ -156,14 +168,6 @@ const Home = () => {
   const [obs, setObs] = useState(window.localStorage.getItem("obs"));
   const [link, setLink] = useState(window.localStorage.getItem("link"));
 
-  const setLocalStorageName = (value) => {
-    try {
-      setNombre(value);
-      window.localStorage.setItem("nombre", value);
-    } catch (error) {
-      console.error(error);
-    }
-  };
   const setLocalStorageFolio = (value) => {
     try {
       setFolio(value);
@@ -276,7 +280,11 @@ const Home = () => {
                 { required: true, message: "Agrega el nombre completo" },
               ]}>
               <Input
+                type="text"
+                label="label"
+                id="nombre"
                 onChange={(e) => setLocalStorageName(e.target.value)}
+                ref={nameInput}
                 defaultValue={nombre}
                 style={{ display: "block" }}
                 placeholder="Nombre"
