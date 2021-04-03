@@ -85,6 +85,49 @@ const Home = () => {
       );
     }
   };
+  const loadData2 = () => {
+    if (status && data && id_64) {
+      return (
+        <div>
+          <PDFViewer style={{ width: "100%", height: 450 }}>
+            <MyDocument
+              date={data.date}
+              pacient={data.pacient}
+              folio={data.folio}
+              age={data.age}
+              birth_date={data.birth_date}
+              gender={data.gender}
+              test_result={data.test_result}
+              observations={data.observations}
+              id_64={id_64}
+              test_64={test_64}
+            />
+          </PDFViewer>
+          <PDFDownloadLink
+            style={{ fontSize: 15, fontWeight: "bold " }}
+            document={
+              <MyDocument
+                date={data.date}
+                pacient={data.pacient}
+                folio={data.folio}
+                age={data.age}
+                birth_date={data.birth_date}
+                gender={data.gender}
+                test_result={data.test_result}
+                observations={data.observations}
+                id_64={id_64}
+                test_64={test_64}
+              />
+            }
+            fileName="somename.pdf">
+            {({ blob, url, loading, error }) =>
+              loading ? "Loading document..." : "Download now!"
+            }
+          </PDFDownloadLink>
+        </div>
+      );
+    }
+  };
 
   // const getFileData = ({ blob, url, loading, error }) => {};
 
@@ -142,188 +185,398 @@ const Home = () => {
     }
   };
   return (
-    <div>
+    <>
       <div>
-        <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
-          Completa los campos del paciente:
-        </h1>
-        <Form
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: "100%",
-            margin: "0 auto",
-          }}
-          className="pdf-form"
-          name="basic"
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Fecha de Prueba"
-            name="date"
-            rules={[{ required: true, message: "Agrega una fecha" }]}>
-            <Input
-              style={{ display: "block" }}
-              placeholder="2021/02/30"
-              type="datetime-local"
-            />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Nombre Completo del Paciente"
-            name="pacient"
-            rules={[{ required: true, message: "Agrega el nombre completo" }]}>
-            <Input style={{ display: "block" }} placeholder="Nombre" />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Número de Folio"
-            name="folio"
-            rules={[{ required: true, message: "Agrega el número de Folio" }]}>
-            <Input defaultValue="00010" style={{ display: "block" }} />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Fecha Nacimiento del Paciente"
-            name="birth_date"
-            rules={[
-              { required: true, message: "Agrega la fecha de nacimiento" },
-            ]}>
-            <Input
-              type="date"
-              placeholder="Fecha de nacimiento"
-              style={{ display: "block" }}
-            />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Email"
-            name="mail"
-            rules={[{ required: true, message: "Agrega el Email" }]}>
-            <Input
-              type="email"
-              placeholder="Email"
-              style={{ display: "block" }}
-            />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Edad"
-            name="age"
-            rules={[{ required: true, message: "Agrega la edad" }]}>
-            <Input placeholder="Edad" style={{ display: "block" }} />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Género"
-            name="gender"
-            rules={[{ required: true, message: "Selecciona el género" }]}>
-            <Select
-              style={{ width: "100%", display: "block" }}
-              onChange={handleChangeGener}>
-              <Option value="Male / Masculino">Male / Masculino</Option>
-              <Option value="Famele / Femenimo">Famele / Femenimo</Option>
-              <Option value="Other / Otro">Other / Otro</Option>
-            </Select>
-          </Form.Item>
+        <div>
+          <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
+            Completa los campos del paciente:
+          </h1>
+          <Form
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              margin: "0 auto",
+            }}
+            className="pdf-form"
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Fecha de Prueba"
+              name="date"
+              rules={[{ required: true, message: "Agrega una fecha" }]}>
+              <Input
+                style={{ display: "block" }}
+                placeholder="2021/02/30"
+                type="datetime-local"
+              />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Nombre Completo del Paciente"
+              name="pacient"
+              rules={[
+                { required: true, message: "Agrega el nombre completo" },
+              ]}>
+              <Input style={{ display: "block" }} placeholder="Nombre" />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Número de Folio"
+              name="folio"
+              rules={[
+                { required: true, message: "Agrega el número de Folio" },
+              ]}>
+              <Input defaultValue="00010" style={{ display: "block" }} />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Fecha Nacimiento del Paciente"
+              name="birth_date"
+              rules={[
+                { required: true, message: "Agrega la fecha de nacimiento" },
+              ]}>
+              <Input
+                type="date"
+                placeholder="Fecha de nacimiento"
+                style={{ display: "block" }}
+              />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Email"
+              name="mail"
+              rules={[{ required: true, message: "Agrega el Email" }]}>
+              <Input
+                type="email"
+                placeholder="Email"
+                style={{ display: "block" }}
+              />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Edad"
+              name="age"
+              rules={[{ required: true, message: "Agrega la edad" }]}>
+              <Input placeholder="Edad" style={{ display: "block" }} />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Género"
+              name="gender"
+              rules={[{ required: true, message: "Selecciona el género" }]}>
+              <Select
+                style={{ width: "100%", display: "block" }}
+                onChange={handleChangeGener}>
+                <Option value="Male / Masculino">Male / Masculino</Option>
+                <Option value="Famele / Femenimo">Famele / Femenimo</Option>
+                <Option value="Other / Otro">Other / Otro</Option>
+              </Select>
+            </Form.Item>
 
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Resultado prueba"
-            name="test_result"
-            rules={[{ required: true, message: "Agrega el resultado" }]}>
-            <Select
-              style={{ width: "100%", display: "block" }}
-              onChange={handleChangeTest}>
-              <Option value="POSITIVE / POSITIVO">POSITIVE / POSITIVO</Option>
-              <Option value="NEGATIVE / NEGATIVO">NEGATIVE / NEGATIVO</Option>
-            </Select>
-          </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Resultado prueba"
+              name="test_result"
+              rules={[{ required: true, message: "Agrega el resultado" }]}>
+              <Select
+                style={{ width: "100%", display: "block" }}
+                onChange={handleChangeTest}>
+                <Option value="POSITIVE / POSITIVO">POSITIVE / POSITIVO</Option>
+                <Option value="NEGATIVE / NEGATIVO">NEGATIVE / NEGATIVO</Option>
+              </Select>
+            </Form.Item>
 
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="Observaciones"
-            name="observations">
-            <Input placeholder="Observaciones" style={{ display: "block" }} />
-          </Form.Item>
-          <Form.Item
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-            label="URL carpeta"
-            name="nombre"
-            rules={[{ required: true, message: "Agrega la URL del paciente" }]}>
-            <Input
-              placeholder="URL del paciente"
-              onChange={onChangeURL}
-              style={{ display: "block" }}
-              type="text"
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Observaciones"
+              name="observations">
+              <Input placeholder="Observaciones" style={{ display: "block" }} />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="URL carpeta"
               name="nombre"
-            />
-          </Form.Item>
-          <Row
-            style={{ width: "50%", margin: "0 auto" }}
-            justify="center"
-            align="middle">
+              rules={[
+                { required: true, message: "Agrega la URL del paciente" },
+              ]}>
+              <Input
+                placeholder="URL del paciente"
+                onChange={onChangeURL}
+                style={{ display: "block" }}
+                type="text"
+                name="nombre"
+              />
+            </Form.Item>
+            <Row
+              style={{ width: "50%", margin: "0 auto" }}
+              justify="center"
+              align="middle">
+              <Form.Item
+                label="Cargar identificación"
+                style={{
+                  fontWeight: "bold",
+                  width: "50%",
+                  margin: "20px auto",
+                  display: "block",
+                }}>
+                <Upload
+                  name="avatar"
+                  listType="picture-card"
+                  className="avatar-uploader"
+                  showUploadList={false}
+                  beforeUpload={() => console.log("uploading...")}
+                  onChange={handleChange}>
+                  {id_64 ? (
+                    <img src={id_64} alt="avatar" style={{ width: "100%" }} />
+                  ) : (
+                    <div>
+                      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                      <div style={{ marginTop: 8 }}>Cargar</div>
+                    </div>
+                  )}
+                </Upload>
+              </Form.Item>
+              <Form.Item
+                label="Cargar prueba"
+                style={{
+                  fontWeight: "bold",
+                  width: "50%",
+                  margin: "20px auto",
+                  display: "block",
+                }}>
+                <Upload
+                  name="test"
+                  listType="picture-card"
+                  className="test-uploader"
+                  showUploadList={false}
+                  beforeUpload={() => console.log("uploading...")}
+                  onChange={handleTestChange}>
+                  {id_64 ? (
+                    <img src={test_64} alt="test" style={{ width: "100%" }} />
+                  ) : (
+                    <div>
+                      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                      <div style={{ marginTop: 8 }}>Cargar</div>
+                    </div>
+                  )}
+                </Upload>
+              </Form.Item>
+            </Row>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Generar Certificado
+              </Button>
+            </Form.Item>
+            <div
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}>
+              <QrCode
+                value={qr}
+                style={{
+                  fontWeight: "bold",
+                  width: "10%",
+                  height: "10%",
+                  margin: "20px auto",
+                }}
+                id="qrCode"
+              />
+            </div>
+          </Form>
+        </div>
+
+        {loadData()}
+      </div>
+      <div>
+        <div>
+          <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
+            Completa los campos del paciente (SIN QR):
+          </h1>
+          <Form
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              width: "100%",
+              margin: "0 auto",
+            }}
+            className="pdf-form"
+            name="basic"
+            initialValues={{ remember: true }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}>
             <Form.Item
-              label="Cargar identificación"
-              style={{
-                fontWeight: "bold",
-                width: "50%",
-                margin: "20px auto",
-                display: "block",
-              }}>
-              <Upload
-                name="avatar"
-                listType="picture-card"
-                className="avatar-uploader"
-                showUploadList={false}
-                beforeUpload={() => console.log("uploading...")}
-                onChange={handleChange}>
-                {id_64 ? (
-                  <img src={id_64} alt="avatar" style={{ width: "100%" }} />
-                ) : (
-                  <div>
-                    {loading ? <LoadingOutlined /> : <PlusOutlined />}
-                    <div style={{ marginTop: 8 }}>Cargar</div>
-                  </div>
-                )}
-              </Upload>
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Fecha de Prueba"
+              name="date"
+              rules={[{ required: true, message: "Agrega una fecha" }]}>
+              <Input
+                style={{ display: "block" }}
+                placeholder="2021/02/30"
+                type="datetime-local"
+              />
             </Form.Item>
             <Form.Item
-              label="Cargar prueba"
-              style={{
-                fontWeight: "bold",
-                width: "50%",
-                margin: "20px auto",
-                display: "block",
-              }}>
-              <Upload
-                name="test"
-                listType="picture-card"
-                className="test-uploader"
-                showUploadList={false}
-                beforeUpload={() => console.log("uploading...")}
-                onChange={handleTestChange}>
-                {id_64 ? (
-                  <img src={test_64} alt="test" style={{ width: "100%" }} />
-                ) : (
-                  <div>
-                    {loading ? <LoadingOutlined /> : <PlusOutlined />}
-                    <div style={{ marginTop: 8 }}>Cargar</div>
-                  </div>
-                )}
-              </Upload>
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Nombre Completo del Paciente"
+              name="pacient"
+              rules={[
+                { required: true, message: "Agrega el nombre completo" },
+              ]}>
+              <Input style={{ display: "block" }} placeholder="Nombre" />
             </Form.Item>
-          </Row>
-          <Form.Item>
-            <Button type="primary" htmlType="submit">
-              Generar Certificado
-            </Button>
-          </Form.Item>
-          <div
-            style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}>
-            <QrCode
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Número de Folio"
+              name="folio"
+              rules={[
+                { required: true, message: "Agrega el número de Folio" },
+              ]}>
+              <Input defaultValue="00010" style={{ display: "block" }} />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Fecha Nacimiento del Paciente"
+              name="birth_date"
+              rules={[
+                { required: true, message: "Agrega la fecha de nacimiento" },
+              ]}>
+              <Input
+                type="date"
+                placeholder="Fecha de nacimiento"
+                style={{ display: "block" }}
+              />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Email"
+              name="mail"
+              rules={[{ required: true, message: "Agrega el Email" }]}>
+              <Input
+                type="email"
+                placeholder="Email"
+                style={{ display: "block" }}
+              />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Edad"
+              name="age"
+              rules={[{ required: true, message: "Agrega la edad" }]}>
+              <Input placeholder="Edad" style={{ display: "block" }} />
+            </Form.Item>
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Género"
+              name="gender"
+              rules={[{ required: true, message: "Selecciona el género" }]}>
+              <Select
+                style={{ width: "100%", display: "block" }}
+                onChange={handleChangeGener}>
+                <Option value="Male / Masculino">Male / Masculino</Option>
+                <Option value="Famele / Femenimo">Famele / Femenimo</Option>
+                <Option value="Other / Otro">Other / Otro</Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Resultado prueba"
+              name="test_result"
+              rules={[{ required: true, message: "Agrega el resultado" }]}>
+              <Select
+                style={{ width: "100%", display: "block" }}
+                onChange={handleChangeTest}>
+                <Option value="POSITIVE / POSITIVO">POSITIVE / POSITIVO</Option>
+                <Option value="NEGATIVE / NEGATIVO">NEGATIVE / NEGATIVO</Option>
+              </Select>
+            </Form.Item>
+
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="Observaciones"
+              name="observations">
+              <Input placeholder="Observaciones" style={{ display: "block" }} />
+            </Form.Item>
+            {/* <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="URL carpeta"
+              name="nombre"
+              rules={[
+                { required: true, message: "Agrega la URL del paciente" },
+              ]}>
+              <Input
+                placeholder="URL del paciente"
+                onChange={onChangeURL}
+                style={{ display: "block" }}
+                type="text"
+                name="nombre"
+              />
+            </Form.Item> */}
+            <Row
+              style={{ width: "50%", margin: "0 auto" }}
+              justify="center"
+              align="middle">
+              <Form.Item
+                label="Cargar identificación"
+                style={{
+                  fontWeight: "bold",
+                  width: "50%",
+                  margin: "20px auto",
+                  display: "block",
+                }}>
+                <Upload
+                  name="avatar"
+                  listType="picture-card"
+                  className="avatar-uploader"
+                  showUploadList={false}
+                  beforeUpload={() => console.log("uploading...")}
+                  onChange={handleChange}>
+                  {id_64 ? (
+                    <img src={id_64} alt="avatar" style={{ width: "100%" }} />
+                  ) : (
+                    <div>
+                      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                      <div style={{ marginTop: 8 }}>Cargar</div>
+                    </div>
+                  )}
+                </Upload>
+              </Form.Item>
+              <Form.Item
+                label="Cargar prueba"
+                style={{
+                  fontWeight: "bold",
+                  width: "50%",
+                  margin: "20px auto",
+                  display: "block",
+                }}>
+                <Upload
+                  name="test"
+                  listType="picture-card"
+                  className="test-uploader"
+                  showUploadList={false}
+                  beforeUpload={() => console.log("uploading...")}
+                  onChange={handleTestChange}>
+                  {id_64 ? (
+                    <img src={test_64} alt="test" style={{ width: "100%" }} />
+                  ) : (
+                    <div>
+                      {loading ? <LoadingOutlined /> : <PlusOutlined />}
+                      <div style={{ marginTop: 8 }}>Cargar</div>
+                    </div>
+                  )}
+                </Upload>
+              </Form.Item>
+            </Row>
+            <Form.Item>
+              <Button type="primary" htmlType="submit">
+                Generar Certificado
+              </Button>
+            </Form.Item>
+            <div
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}>
+              {/* <QrCode
               value={qr}
               style={{
                 fontWeight: "bold",
@@ -332,13 +585,14 @@ const Home = () => {
                 margin: "20px auto",
               }}
               id="qrCode"
-            />
-          </div>
-        </Form>
-      </div>
+            /> */}
+            </div>
+          </Form>
+        </div>
 
-      {loadData()}
-    </div>
+        {loadData2()}
+      </div>
+    </>
   );
 };
 

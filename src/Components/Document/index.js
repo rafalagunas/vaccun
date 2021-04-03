@@ -63,7 +63,7 @@ const MyDocument = ({
   test_64,
   qr_64,
 }) => {
-  console.log("QR_64", qr_64);
+  // console.log("QR_64", qr_64);
   return (
     <>
       {date !== undefined ? (
