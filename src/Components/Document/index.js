@@ -162,7 +162,7 @@ const MyDocument = ({
                   <View>
                     <Text
                       style={{
-                        fontSize: "12",
+                        fontSize: "9",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",

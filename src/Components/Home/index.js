@@ -389,6 +389,7 @@ const Home = () => {
 
         {loadData()}
       </div>
+
       <div>
         <div>
           <h1 style={{ textAlign: "center", fontWeight: "bold" }}>
