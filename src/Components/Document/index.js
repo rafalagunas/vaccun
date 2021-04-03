@@ -428,47 +428,6 @@ const MyDocument = ({
                     textAlign: "left",
                     marginBottom: "15px",
                   }}>
-                  {/* <View>
-                    <Text
-                      style={{
-                        fontSize: "11",
-                        fontWeight: "600",
-                      }}>
-                      Certificate is issued for the purposes that the patient
-                      agrees.
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: "11",
-                        fontWeight: "600",
-                      }}>
-                      Se emite certificado para los fines que al paciente
-                      convenga.
-                    </Text>
-                    <Image
-                      style={{
-                        width: "68px",
-                        height: "28px",
-                        marginBottom: "10px",
-                      }}
-                      source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/firma.png"
-                    />
-                    <Text
-                      style={{
-                        fontSize: "11",
-                        fontWeight: "600",
-                      }}>
-                      Dra. María Teresa Chavez Espinoza
-                    </Text>
-                    <Text
-                      style={{
-                        fontSize: "11",
-                        fontWeight: "600",
-                        marginBottom: "10px",
-                      }}>
-                      Cedula Profesional 2847019
-                    </Text>
-                  </View> */}
                   {/* QR */}
                   <View
                     style={{
