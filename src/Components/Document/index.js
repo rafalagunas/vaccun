@@ -63,7 +63,7 @@ const MyDocument = ({
   test_64,
   qr_64,
 }) => {
-  // console.log("QR_64", qr_64);
+  console.log("QR_64", qr_64);
   return (
     <>
       {date !== undefined ? (
@@ -439,13 +439,20 @@ const MyDocument = ({
                     <View
                       style={{
                         width: "100%",
-                        margin: "0 auto",
                         display: "flex",
                         justifyContent: "center",
+                        position: "relative",
+                        right: 0,
+                        left: 0,
+                        margin: "0 auto",
+                        zIndex: "200",
                       }}>
                       <Image
                         source={qr_64}
-                        style={{ width: "50px", height: "50px" }}
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                        }}
                       />
                     </View>
                   </View>

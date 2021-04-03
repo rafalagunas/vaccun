@@ -24,7 +24,7 @@ const Home = () => {
   const onChangeURL = (event) => {
     setQr(event.target.value);
     setLocalStorageLink(event.target.value);
-    window.location.reload();
+    // window.location.reload();
   };
 
   const { Option } = Select;
