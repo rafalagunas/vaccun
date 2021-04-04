@@ -15,16 +15,17 @@ const Home = () => {
   const [status, finished] = useState(false);
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
-  const [id_64, setID] = useState("");
-  const [test_64, setTest] = useState("");
+  const [id_64, setID] = useState(window.localStorage.getItem("image1"));
+  const [test_64, setTest] = useState(window.localStorage.getItem("image2"));
   const [qr_64, setQr_64] = useState("");
   const imageRef = useRef(null);
 
   const [qr, setQr] = useState("");
+
   const onChangeURL = (event) => {
     setQr(event.target.value);
     setLocalStorageLink(event.target.value);
-    // window.location.reload();
+    window.location.reload();
   };
 
   const { Option } = Select;
@@ -41,8 +42,8 @@ const Home = () => {
   }, [imageRef]);
 
   useEffect(() => {
-    let foo = prompt("Ingrese contraseña");
-    console.log(foo);
+    // let foo = prompt("Ingrese contraseña");
+    // console.log(foo);
   }, []);
   const loadData = () => {
     if (status && data && id_64) {
@@ -120,6 +121,7 @@ const Home = () => {
       console.log(url);
       getBase64(info.file.originFileObj, (id_64) => {
         setID(id_64);
+        setLocalStorageImage1();
         setLoading(false);
       });
     }
@@ -132,6 +134,7 @@ const Home = () => {
       console.log(url);
       getBase64(info.file.originFileObj, (test_64) => {
         setTest(test_64);
+        setLocalStorageImage2();
         setLoading(false);
       });
     }
@@ -145,19 +148,7 @@ const Home = () => {
       setQr_64(dataURL);
     }
   };
-
   const [nombre, setNombre] = useState(window.localStorage.getItem("nombre"));
-  const nameInput = useRef(null);
-
-  const setLocalStorageName = (value) => {
-    try {
-      setNombre(value);
-      window.localStorage.setItem("nombre", value);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const [folio, setFolio] = useState(window.localStorage.getItem("folio"));
   const [date, setDate] = useState(window.localStorage.getItem("date"));
   const [nace, setNace] = useState(window.localStorage.getItem("nace"));
@@ -168,6 +159,14 @@ const Home = () => {
   const [obs, setObs] = useState(window.localStorage.getItem("obs"));
   const [link, setLink] = useState(window.localStorage.getItem("link"));
 
+  const setLocalStorageName = (value) => {
+    try {
+      setNombre(value);
+      window.localStorage.setItem("nombre", value);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const setLocalStorageFolio = (value) => {
     try {
       setFolio(value);
@@ -240,6 +239,25 @@ const Home = () => {
       console.error(error);
     }
   };
+  const setLocalStorageImage1 = () => {
+    try {
+      window.localStorage.setItem("image1", id_64);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const setLocalStorageImage2 = () => {
+    try {
+      window.localStorage.setItem("image2", test_64);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleUrl = () => {
+    setQr(window.localStorage.getItem("link"));
+  };
+
   return (
     <>
       <div>
@@ -263,29 +281,28 @@ const Home = () => {
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Fecha de Prueba"
               name="date"
+              initialValue={date}
               rules={[{ required: true, message: "Agrega una fecha" }]}>
               <Input
                 style={{ display: "block" }}
                 placeholder="2021/02/30"
                 type="datetime-local"
                 onChange={(e) => setLocalStorageDate(e.target.value)}
-                defaultValue={date}
               />
             </Form.Item>
             <Form.Item
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Nombre Completo del Paciente"
               name="pacient"
+              initialValue={nombre}
               rules={[
                 { required: true, message: "Agrega el nombre completo" },
               ]}>
               <Input
                 type="text"
-                label="label"
-                id="nombre"
+                label="name"
+                id="name"
                 onChange={(e) => setLocalStorageName(e.target.value)}
-                ref={nameInput}
-                defaultValue={nombre}
                 style={{ display: "block" }}
                 placeholder="Nombre"
               />
@@ -294,12 +311,12 @@ const Home = () => {
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Número de Folio"
               name="folio"
+              initialValue={folio}
               rules={[
                 { required: true, message: "Agrega el número de Folio" },
               ]}>
               <Input
                 onChange={(e) => setLocalStorageFolio(e.target.value)}
-                defaultValue={folio}
                 style={{ display: "block" }}
               />
             </Form.Item>
@@ -307,6 +324,7 @@ const Home = () => {
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Fecha Nacimiento del Paciente"
               name="birth_date"
+              initialValue={nace}
               rules={[
                 { required: true, message: "Agrega la fecha de nacimiento" },
               ]}>
@@ -315,32 +333,31 @@ const Home = () => {
                 placeholder="Fecha de nacimiento"
                 style={{ display: "block" }}
                 onChange={(e) => setLocalStorageNace(e.target.value)}
-                defaultValue={nace}
               />
             </Form.Item>
             <Form.Item
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Email"
               name="mail"
+              initialValue={mail}
               rules={[{ required: true, message: "Agrega el Email" }]}>
               <Input
                 type="email"
                 placeholder="Email"
                 style={{ display: "block" }}
                 onChange={(e) => setLocalStorageMail(e.target.value)}
-                defaultValue={mail}
               />
             </Form.Item>
             <Form.Item
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Edad"
               name="age"
+              initialValue={edad}
               rules={[{ required: true, message: "Agrega la edad" }]}>
               <Input
                 placeholder="Edad"
                 style={{ display: "block" }}
                 onChange={(e) => setLocalStorageEdad(e.target.value)}
-                defaultValue={edad}
               />
             </Form.Item>
             <Form.Item
@@ -348,11 +365,11 @@ const Home = () => {
               label="Género"
               name="gender"
               onChange={(e) => setLocalStorageGener(e.target.value)}
+              initialValue={genero}
               rules={[{ required: true, message: "Selecciona el género" }]}>
               <Select
                 style={{ width: "100%", display: "block" }}
-                onChange={handleChangeGener}
-                defaultValue={genero}>
+                onChange={handleChangeGener}>
                 <Option value="Male / Masculino">Male / Masculino</Option>
                 <Option value="Famele / Femenimo">Famele / Femenimo</Option>
                 <Option value="Other / Otro">Other / Otro</Option>
@@ -363,11 +380,11 @@ const Home = () => {
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Resultado prueba"
               name="test_result"
+              initialValue={result}
               rules={[{ required: true, message: "Agrega el resultado" }]}>
               <Select
                 style={{ width: "100%", display: "block" }}
-                onChange={handleChangeTest}
-                defaultValue={result}>
+                onChange={handleChangeTest}>
                 <Option value="POSITIVE / POSITIVO">POSITIVE / POSITIVO</Option>
                 <Option value="NEGATIVE / NEGATIVO">NEGATIVE / NEGATIVO</Option>
               </Select>
@@ -376,33 +393,16 @@ const Home = () => {
             <Form.Item
               style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
               label="Observaciones"
+              initialValue={obs}
               name="observations">
               <Input
                 type="text"
                 placeholder="Observaciones"
                 style={{ display: "block" }}
                 onChange={(e) => setLocalStorageObs(e.target.value)}
-                defaultValue={obs}
               />
             </Form.Item>
-            <Form.Item
-              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
-              label="URL carpeta"
-              name="nombre"
 
-              // rules={[
-              //   { required: true, message: "Agrega la URL del paciente" },
-              // ]}
-            >
-              <Input
-                placeholder="URL del paciente"
-                onChange={onChangeURL}
-                style={{ display: "block" }}
-                type="text"
-                name="nombre"
-                defaultValue={link}
-              />
-            </Form.Item>
             <Row
               style={{ width: "50%", margin: "0 auto" }}
               justify="center"
@@ -463,9 +463,26 @@ const Home = () => {
                 Generar Certificado
               </Button>
             </Form.Item>
-
+            <Form.Item
+              style={{ fontWeight: "bold", width: "50%", margin: "20px auto" }}
+              label="URL carpeta"
+              initialValue={link}
+              name="nombre">
+              <Input
+                placeholder="URL del paciente"
+                onChange={onChangeURL}
+                style={{ display: "block" }}
+                defaultValue={link}
+                type="text"
+              />
+            </Form.Item>
+            <Row justify="center" style={{ paddingBottom: "10px" }}>
+              <Button type="primary" onClick={handleUrl}>
+                Cargar URL
+              </Button>
+            </Row>
             {qr === "" ? (
-              <></>
+              <div style={{ paddingBottom: "150px" }}></div>
             ) : (
               <div
                 style={{
