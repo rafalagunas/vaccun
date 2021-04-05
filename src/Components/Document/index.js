@@ -179,7 +179,7 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "11" }}>Date of Birh:</Text>
+                    <Text style={{ fontSize: "11" }}>Birth Date:</Text>
                     <Text style={{ fontSize: "10" }}>Fecha de Nacimiento:</Text>
                   </View>
                   <View>
@@ -368,8 +368,10 @@ const MyDocument = ({
                     width: "50%",
                   }}>
                   <View>
-                    <Text style={{ fontSize: "11" }}>Test Resultant:</Text>
-                    <Text style={{ fontSize: "10" }}>Test Resultant:</Text>
+                    <Text style={{ fontSize: "11" }}>Test Results:</Text>
+                    <Text style={{ fontSize: "10" }}>
+                      Resultado de la Prueba:
+                    </Text>
                   </View>
                   <View>
                     <Text

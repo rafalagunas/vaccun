@@ -371,7 +371,7 @@ const Home = () => {
                 style={{ width: "100%", display: "block" }}
                 onChange={handleChangeGener}>
                 <Option value="Male / Masculino">Male / Masculino</Option>
-                <Option value="Famele / Femenimo">Famele / Femenimo</Option>
+                <Option value="Female / Femenimo">Female / Femenimo</Option>
                 <Option value="Other / Otro">Other / Otro</Option>
               </Select>
             </Form.Item>
