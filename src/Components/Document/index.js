@@ -61,7 +61,7 @@ const MyDocument = ({
   observations,
   id_64,
   test_64,
-  qr_64
+  qr_64,
 }) => {
   console.log("QR_64", qr_64);
   return (
@@ -72,12 +72,10 @@ const MyDocument = ({
             <View style={styles.image}>
               <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
             </View>
-            <View style={styles.image}>
-              <Image source={qr_64} />
-            </View>
-            <View style={{ marginBottom: "40px", textAlign: "center" }}>
-              <Text style={styles.title.english}>Medical certificate</Text>
-              <Text style={styles.title.spanish}>Certificado Médico</Text>
+
+            <View style={{ marginBottom: "20px", textAlign: "center" }}>
+              <Text style={{ fontSize: "15" }}>Medical certificate</Text>
+              <Text style={{ fontSize: "14" }}>Certificado Médico</Text>
             </View>
 
             <View
@@ -85,38 +83,34 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 60px",
-              }}
-            >
+              }}>
               <View
                 style={{
                   display: "flex",
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "15px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Test Date:</Text>
-                    <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
+                    <Text style={{ fontSize: "11" }}>Test Date:</Text>
+                    <Text style={{ fontSize: "10" }}>Fecha de prueba:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "12",
+                        fontSize: "11",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {date}
                     </Text>
                   </View>
@@ -127,21 +121,19 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Folio Number:</Text>
-                    <Text style={{ fontSize: "11" }}>Número de Folio:</Text>
+                    <Text style={{ fontSize: "11" }}>Folio Number:</Text>
+                    <Text style={{ fontSize: "10" }}>Número de Folio:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {folio}
                     </Text>
                   </View>
@@ -154,30 +146,27 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "15px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Name:</Text>
-                    <Text style={{ fontSize: "11" }}>Nombre:</Text>
+                    <Text style={{ fontSize: "11" }}>Name:</Text>
+                    <Text style={{ fontSize: "10" }}>Nombre:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "9",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {pacient}
                     </Text>
                   </View>
@@ -188,21 +177,19 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Date of Birh:</Text>
-                    <Text style={{ fontSize: "11" }}>Fecha de Nacimiento:</Text>
+                    <Text style={{ fontSize: "11" }}>Birth Date:</Text>
+                    <Text style={{ fontSize: "10" }}>Fecha de Nacimiento:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {birth_date}
                     </Text>
                   </View>
@@ -215,30 +202,27 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "15px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Age:</Text>
-                    <Text style={{ fontSize: "11" }}>Edad:</Text>
+                    <Text style={{ fontSize: "11" }}>Age:</Text>
+                    <Text style={{ fontSize: "10" }}>Edad:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {age}
                     </Text>
                   </View>
@@ -249,21 +233,19 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Gender:</Text>
-                    <Text style={{ fontSize: "11" }}>Genero:</Text>
+                    <Text style={{ fontSize: "11" }}>Gender:</Text>
+                    <Text style={{ fontSize: "10" }}>Genero:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "14",
+                        fontSize: "12",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {gender}
                     </Text>
                   </View>
@@ -276,28 +258,25 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "15px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>
+                    <Text style={{ fontSize: "11" }}>
                       I hereby certify that the patient:
                     </Text>
                     <Text
                       style={{
-                        fontSize: "13",
+                        fontSize: "12",
                         paddingRight: "20px",
                         textDecoration: "underline",
-                      }}
-                    >
+                      }}>
                       {pacient}
                     </Text>
                     <Text style={{ fontSize: "11", paddingRight: "20px" }}>
@@ -311,19 +290,17 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>
+                    <Text style={{ fontSize: "11" }}>
                       Por medio del presente certifico que el paciente:
                     </Text>
                     <Text
                       style={{
-                        fontSize: "13",
+                        fontSize: "12",
                         paddingRight: "20px",
                         textDecoration: "underline",
-                      }}
-                    >
+                      }}>
                       {pacient}
                     </Text>
                     <Text style={{ fontSize: "11" }}>
@@ -339,20 +316,18 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "15px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Name of the Test:</Text>
-                    <Text style={{ fontSize: "11", paddingRight: "20px" }}>
+                    <Text style={{ fontSize: "11" }}>Name of the Test:</Text>
+                    <Text style={{ fontSize: "10", paddingRight: "20px" }}>
                       COVID 19 Detection Antigen. Qualitative.
                       Inmunochromatography. Ag SARS COV 2 Roche * COFEPRIS
                       Authorization: CAS/SESSDM/17969/2020
@@ -365,11 +340,10 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Nombre de la Prueba:</Text>
-                    <Text style={{ fontSize: "11" }}>
+                    <Text style={{ fontSize: "11" }}>Nombre de la Prueba:</Text>
+                    <Text style={{ fontSize: "10" }}>
                       Antígeno de detección COVID 19. Cualitativo
                       Inmunocromatográfica. Reactivo Ag SARS COV 2 Roche *
                       Autorización COFEPRIS: CAS/SESSDM/17969/2020
@@ -384,30 +358,29 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "15px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Test Resultant:</Text>
-                    <Text style={{ fontSize: "11" }}>Test Resultant:</Text>
+                    <Text style={{ fontSize: "11" }}>Test Results:</Text>
+                    <Text style={{ fontSize: "10" }}>
+                      Resultado de la Prueba:
+                    </Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "17",
+                        fontSize: "14",
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {test_result}
                     </Text>
                   </View>
@@ -420,49 +393,94 @@ const MyDocument = ({
                   flexDirection: "row",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  marginBottom: "20px",
-                }}
-              >
+                  marginBottom: "25px",
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
-                    <Text style={{ fontSize: "12" }}>Observations:</Text>
-                    <Text style={{ fontSize: "11" }}>Observaciones:</Text>
+                    <Text style={{ fontSize: "11" }}>Observations:</Text>
+                    <Text style={{ fontSize: "10" }}>Observaciones:</Text>
                   </View>
                   <View>
                     <Text
                       style={{
-                        fontSize: "11",
+                        fontSize: "10",
                         fontWeight: "700",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {observations}
                     </Text>
                   </View>
                 </View>
               </View>
+              {/* FIRMA */}
+              <View
+                style={{
+                  marginBottom: "15px",
+                }}>
+                <View
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "left",
+                    marginBottom: "15px",
+                  }}>
+                  {/* QR */}
+                  <View
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      margin: "0 auto",
+                    }}>
+                    <View
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        position: "relative",
+                        right: 0,
+                        left: 0,
+                        margin: "0 auto",
+                        zIndex: "200",
+                      }}>
+                      <Image
+                        source={qr_64}
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                        }}
+                      />
+                    </View>
+                  </View>
+                </View>
+              </View>
+
+              {/* fin */}
             </View>
+
             <View
               style={{
                 position: "absolute",
-                height: 40,
+                // height: 40,
                 left: "0",
                 right: "0",
-                top: "100%",
-                padding: "0 10%",
+                top: "80%",
+                // padding: "0 10%",
                 margin: "0 auto",
-                textAlign: "center",
+                // textAlign: "center",
               }}
-              fixed
-            >
-              <Text style={{ fontWeight: "bold", fontSize: 8 }}>
+              fixed>
+              <Image
+                style={styles.image}
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer1.jpg"
+              />
+              {/* <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
                 Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
                 LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
@@ -470,7 +488,7 @@ const MyDocument = ({
                 Hotelera, T1500 Cancún, Q.R. Oficina Corporativa Ave Sayil Smz 6
                 Mz 5 Lote 2 Piso 11 Interior 1101 A, Plaza Azuna Cancún, Benito
                 Juárez, Q.R.
-              </Text>
+              </Text> */}
             </View>
           </Page>
 
@@ -483,8 +501,7 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 30px",
-              }}
-            >
+              }}>
               <View
                 style={{
                   display: "flex",
@@ -492,16 +509,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -513,8 +528,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {date}
                     </Text>
                   </View>
@@ -528,16 +542,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Patient ID:</Text>
                     <Text style={{ fontSize: "11" }}>
@@ -556,25 +568,16 @@ const MyDocument = ({
             <View
               style={{
                 position: "absolute",
-                height: 40,
                 left: "0",
                 right: "0",
-                top: "100%",
-                padding: "0 10%",
+                top: "80%",
                 margin: "0 auto",
-                textAlign: "center",
               }}
-              fixed
-            >
-              <Text style={{ fontWeight: "bold", fontSize: 8 }}>
-                Medical Center - LobbyCare Azuna Medical Center, Piso 9,
-                Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
-                LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
-                – Puerto Cancún Blvd. Kulkulcán km. 1.5, Puerto Juárez, Zona
-                Hotelera, T1500 Cancún, Q.R. Oficina Corporativa Ave Sayil Smz 6
-                Mz 5 Lote 2 Piso 11 Interior 1101 A, Plaza Azuna Cancún, Benito
-                Juárez, Q.R.
-              </Text>
+              fixed>
+              <Image
+                style={styles.image}
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer2.jpg"
+              />
             </View>
           </Page>
 
@@ -587,8 +590,7 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 30px",
-              }}
-            >
+              }}>
               <View
                 style={{
                   display: "flex",
@@ -596,16 +598,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -617,8 +617,7 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}
-                    >
+                      }}>
                       {date}
                     </Text>
                   </View>
@@ -632,16 +631,14 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}
-              >
+                }}>
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}
-                >
+                  }}>
                   <View>
                     <Text style={{ fontSize: "12" }}>Evidence:</Text>
                     <Text style={{ fontSize: "11" }}>Foto de la prueba:</Text>
@@ -658,25 +655,16 @@ const MyDocument = ({
             <View
               style={{
                 position: "absolute",
-                height: 40,
                 left: "0",
                 right: "0",
-                top: "100%",
-                padding: "0 10%",
+                top: "80%",
                 margin: "0 auto",
-                textAlign: "center",
               }}
-              fixed
-            >
-              <Text style={{ fontWeight: "bold", fontSize: 8 }}>
-                Medical Center - LobbyCare Azuna Medical Center, Piso 9,
-                Consultorio 923, Av. Sayil esquina con Av. Savignac, SM 06 MZ 5
-                LT 2, Cancún, Quintana Roo, CP. 77500 Módulo de atención rápida
-                – Puerto Cancún Blvd. Kulkulcán km. 1.5, Puerto Juárez, Zona
-                Hotelera, T1500 Cancún, Q.R. Oficina Corporativa Ave Sayil Smz 6
-                Mz 5 Lote 2 Piso 11 Interior 1101 A, Plaza Azuna Cancún, Benito
-                Juárez, Q.R.
-              </Text>
+              fixed>
+              <Image
+                style={styles.image}
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer2.jpg"
+              />
             </View>
           </Page>
         </Document>
