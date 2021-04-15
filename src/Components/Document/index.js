@@ -70,7 +70,7 @@ const MyDocument = ({
         <Document>
           <Page size="A4" wrap style={styles.page}>
             <View style={styles.image}>
-              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
+              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/header.jpeg" />
             </View>
 
             <View style={{ marginBottom: "20px", textAlign: "center" }}>
@@ -83,7 +83,8 @@ const MyDocument = ({
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 60px",
-              }}>
+              }}
+            >
               <View
                 style={{
                   display: "flex",
@@ -91,14 +92,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Test Date:</Text>
                     <Text style={{ fontSize: "10" }}>Fecha de prueba:</Text>
@@ -110,7 +113,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {date}
                     </Text>
                   </View>
@@ -121,7 +125,8 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Folio Number:</Text>
                     <Text style={{ fontSize: "10" }}>Número de Folio:</Text>
@@ -133,7 +138,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {folio}
                     </Text>
                   </View>
@@ -147,14 +153,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Name:</Text>
                     <Text style={{ fontSize: "10" }}>Nombre:</Text>
@@ -166,7 +174,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {pacient}
                     </Text>
                   </View>
@@ -177,7 +186,8 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Birth Date:</Text>
                     <Text style={{ fontSize: "10" }}>Fecha de Nacimiento:</Text>
@@ -189,7 +199,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {birth_date}
                     </Text>
                   </View>
@@ -203,14 +214,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Age:</Text>
                     <Text style={{ fontSize: "10" }}>Edad:</Text>
@@ -222,7 +235,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {age}
                     </Text>
                   </View>
@@ -233,7 +247,8 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Gender:</Text>
                     <Text style={{ fontSize: "10" }}>Genero:</Text>
@@ -245,7 +260,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {gender}
                     </Text>
                   </View>
@@ -259,14 +275,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>
                       I hereby certify that the patient:
@@ -276,7 +294,8 @@ const MyDocument = ({
                         fontSize: "12",
                         paddingRight: "20px",
                         textDecoration: "underline",
-                      }}>
+                      }}
+                    >
                       {pacient}
                     </Text>
                     <Text style={{ fontSize: "11", paddingRight: "20px" }}>
@@ -290,7 +309,8 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>
                       Por medio del presente certifico que el paciente:
@@ -300,7 +320,8 @@ const MyDocument = ({
                         fontSize: "12",
                         paddingRight: "20px",
                         textDecoration: "underline",
-                      }}>
+                      }}
+                    >
                       {pacient}
                     </Text>
                     <Text style={{ fontSize: "11" }}>
@@ -317,14 +338,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Name of the Test:</Text>
                     <Text style={{ fontSize: "10", paddingRight: "20px" }}>
@@ -340,7 +363,8 @@ const MyDocument = ({
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Nombre de la Prueba:</Text>
                     <Text style={{ fontSize: "10" }}>
@@ -359,14 +383,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Test Results:</Text>
                     <Text style={{ fontSize: "10" }}>
@@ -380,7 +406,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {test_result}
                     </Text>
                   </View>
@@ -394,14 +421,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "25px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "11" }}>Observations:</Text>
                     <Text style={{ fontSize: "10" }}>Observaciones:</Text>
@@ -412,7 +441,8 @@ const MyDocument = ({
                         fontSize: "10",
                         fontWeight: "700",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {observations}
                     </Text>
                   </View>
@@ -422,14 +452,16 @@ const MyDocument = ({
               <View
                 style={{
                   marginBottom: "15px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     justifyContent: "center",
                     textAlign: "left",
                     marginBottom: "15px",
-                  }}>
+                  }}
+                >
                   {/* QR */}
                   <View
                     style={{
@@ -437,7 +469,8 @@ const MyDocument = ({
                       justifyContent: "center",
                       alignItems: "center",
                       margin: "0 auto",
-                    }}>
+                    }}
+                  >
                     <View
                       style={{
                         width: "100%",
@@ -448,7 +481,8 @@ const MyDocument = ({
                         left: 0,
                         margin: "0 auto",
                         zIndex: "200",
-                      }}>
+                      }}
+                    >
                       <Image
                         source={qr_64}
                         style={{
@@ -475,10 +509,11 @@ const MyDocument = ({
                 margin: "0 auto",
                 // textAlign: "center",
               }}
-              fixed>
+              fixed
+            >
               <Image
                 style={styles.image}
-                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer1.jpg"
+                source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/footer.jpeg"
               />
               {/* <Text style={{ fontWeight: "bold", fontSize: 8 }}>
                 Medical Center - LobbyCare Azuna Medical Center, Piso 9,
@@ -494,14 +529,15 @@ const MyDocument = ({
 
           <Page size="A4" wrap style={styles.page}>
             <View style={styles.image}>
-              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
+              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/header.jpeg" />
             </View>
             <View
               style={{
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 30px",
-              }}>
+              }}
+            >
               <View
                 style={{
                   display: "flex",
@@ -509,14 +545,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -528,7 +566,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {date}
                     </Text>
                   </View>
@@ -542,14 +581,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "12" }}>Patient ID:</Text>
                     <Text style={{ fontSize: "11" }}>
@@ -573,7 +614,8 @@ const MyDocument = ({
                 top: "80%",
                 margin: "0 auto",
               }}
-              fixed>
+              fixed
+            >
               <Image
                 style={styles.image}
                 source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer2.jpg"
@@ -583,14 +625,15 @@ const MyDocument = ({
 
           <Page size="A4" wrap style={styles.page}>
             <View style={styles.image}>
-              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/banner.png" />
+              <Image source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/header.jpeg" />
             </View>
             <View
               style={{
                 display: "flex",
                 justifyContent: "center",
                 padding: "0 30px",
-              }}>
+              }}
+            >
               <View
                 style={{
                   display: "flex",
@@ -598,14 +641,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "12" }}>Test Date:</Text>
                     <Text style={{ fontSize: "11" }}>Fecha de prueba:</Text>
@@ -617,7 +662,8 @@ const MyDocument = ({
                         fontWeight: "700",
                         textDecoration: "underline",
                         paddingLeft: "20px",
-                      }}>
+                      }}
+                    >
                       {date}
                     </Text>
                   </View>
@@ -631,14 +677,16 @@ const MyDocument = ({
                   justifyContent: "space-between",
                   alignItems: "center",
                   marginBottom: "20px",
-                }}>
+                }}
+              >
                 <View
                   style={{
                     display: "flex",
                     flexDirection: "row",
                     alignItems: "center",
                     width: "50%",
-                  }}>
+                  }}
+                >
                   <View>
                     <Text style={{ fontSize: "12" }}>Evidence:</Text>
                     <Text style={{ fontSize: "11" }}>Foto de la prueba:</Text>
@@ -660,7 +708,8 @@ const MyDocument = ({
                 top: "80%",
                 margin: "0 auto",
               }}
-              fixed>
+              fixed
+            >
               <Image
                 style={styles.image}
                 source="https://raw.githubusercontent.com/rafalagunas/vaccun/main/src/Components/Document/footer2.jpg"
